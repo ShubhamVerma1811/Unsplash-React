@@ -29,6 +29,7 @@ function SearchBox() {
     const data = await res.json();
     setData(data);
   }
+  console.log(data);
 
   function searchPhoto(e) {
     setQuery(e.target.firstChild.value);
