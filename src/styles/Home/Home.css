@@ -3,8 +3,6 @@
   margin: auto auto;
   -webkit-columns: 4;
           columns: 4;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
   padding: 0 !important;
 }
 
@@ -12,7 +10,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .imgContainer .content .userInfo {
