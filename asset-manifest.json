@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Unsplash-React/static/css/main.5f9023d2.chunk.css",
-    "main.js": "/Unsplash-React/static/js/main.873b6404.chunk.js",
-    "main.js.map": "/Unsplash-React/static/js/main.873b6404.chunk.js.map",
+    "main.css": "/Unsplash-React/static/css/main.53d796ef.chunk.css",
+    "main.js": "/Unsplash-React/static/js/main.7ce12b18.chunk.js",
+    "main.js.map": "/Unsplash-React/static/js/main.7ce12b18.chunk.js.map",
     "runtime-main.js": "/Unsplash-React/static/js/runtime-main.3d327778.js",
     "runtime-main.js.map": "/Unsplash-React/static/js/runtime-main.3d327778.js.map",
     "static/js/2.70c14966.chunk.js": "/Unsplash-React/static/js/2.70c14966.chunk.js",
     "static/js/2.70c14966.chunk.js.map": "/Unsplash-React/static/js/2.70c14966.chunk.js.map",
     "index.html": "/Unsplash-React/index.html",
-    "precache-manifest.3f66ab9c3b2284adf76317f060c77456.js": "/Unsplash-React/precache-manifest.3f66ab9c3b2284adf76317f060c77456.js",
+    "precache-manifest.6c43359ff7d311bb18a88bd683f33ccc.js": "/Unsplash-React/precache-manifest.6c43359ff7d311bb18a88bd683f33ccc.js",
     "service-worker.js": "/Unsplash-React/service-worker.js",
-    "static/css/main.5f9023d2.chunk.css.map": "/Unsplash-React/static/css/main.5f9023d2.chunk.css.map",
+    "static/css/main.53d796ef.chunk.css.map": "/Unsplash-React/static/css/main.53d796ef.chunk.css.map",
     "static/js/2.70c14966.chunk.js.LICENSE.txt": "/Unsplash-React/static/js/2.70c14966.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3d327778.js",
     "static/js/2.70c14966.chunk.js",
-    "static/css/main.5f9023d2.chunk.css",
-    "static/js/main.873b6404.chunk.js"
+    "static/css/main.53d796ef.chunk.css",
+    "static/js/main.7ce12b18.chunk.js"
   ]
 }
