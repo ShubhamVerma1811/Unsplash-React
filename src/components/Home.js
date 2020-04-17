@@ -11,7 +11,7 @@ function Home() {
     "Client-ID E5EHMkfEkragu1136UCpc_fGGenGwqZltRj6vgw9Hyk"
   );
 
-  const uri = `https://api.unsplash.com/photos/`;
+  const uri = `https://api.unsplash.com/photos/?per_page=15`;
 
   const req = new Request(uri, {
     method: "GET",
@@ -38,7 +38,7 @@ function Home() {
           <div key={item.id} className="content">
             <img
               className="images"
-              src={item.urls.full}
+              src={item.urls.regular}
               alt={item.alt_descriptions}
             />
             <div className="userInfo">

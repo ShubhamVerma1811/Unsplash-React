@@ -1,0 +1,61 @@
+.imgContainer {
+  width: 100%;
+  margin: auto auto;
+  columns: 4;
+  padding: 0 !important;
+
+  .content {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 16px;
+
+    .userInfo {
+      position: absolute;
+      top: 0;
+      background-color: white;
+      width: 100%;
+      height: 100%;
+      display: none;
+
+      h4 {
+        position: relative;
+        top: 0;
+        bottom: 0;
+      }
+
+      img {
+        position: relative;
+        top: 0;
+        bottom: 0;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .imgContainer {
+    columns: 3;
+    width: calc(100%-40px);
+    box-sizing: border-box;
+    padding: 20px 20px 20px 0;
+  }
+}
+@media (max-width: 768px) {
+  .imgContainer {
+    columns: 2;
+  }
+}
+@media (max-width: 480px) {
+  .imgContainer {
+    columns: 1;
+  }
+}

@@ -11,7 +11,7 @@ function App() {
       <Router>
         <Route path="/" component={SearchBox} />
         <Route path="/" exact component={Home} />
-        <Route path="/images/:id" exact component={SearchResults} />
+        <Route path="/images/" exact component={SearchResults} />
       </Router>
     </div>
   );
