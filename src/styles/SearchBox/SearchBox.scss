@@ -1,0 +1,54 @@
+$font: "Montserrat";
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 40px;
+  margin: auto 10.625rem;
+
+  a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 3rem;
+    color: white;
+
+    &:hover {
+      box-sizing: border-box;
+      border-bottom: 0.15rem solid white;
+    }
+  }
+
+  form {
+    display: inline;
+    margin-left: auto;
+
+    input {
+      font-family: $font;
+      font-size: 1rem;
+      padding: 0.5rem;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 0.5rem 0.8rem;
+      margin-left: 0.4rem;
+      font-size: 1rem;
+      border: 0.15rem solid white;
+      border-radius: 10px;
+      font-family: $font;
+      background-color: black;
+      color: white;
+
+      &:hover {
+        color: black;
+        background-color: white;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+
+  #btn:hover {
+    border-bottom: none;
+  }
+}

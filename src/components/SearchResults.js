@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/SearchResults/SearchResults.css";
+import "../styles/Home/Home.css";
 
 function SearchResults() {
   const [data, setData] = useState([]);
@@ -34,7 +34,7 @@ function SearchResults() {
 
   return (
     <div>
-      <h1>{localStorage.getItem("query")}</h1>
+      <h1>{localStorage.getItem("query").toUpperCase()}</h1>
       <div className="imgContainer">
         {data.map((item) => (
           <div key={item.id} className="content">
@@ -43,10 +43,6 @@ function SearchResults() {
               src={item.urls.regular}
               alt={item.alt_descriptions}
             />
-            <div className="userInfo">
-              <h4>{item.user.name}</h4>
-              <img src={item.user.profile_image.large} alt="" />
-            </div>
           </div>
         ))}
       </div>

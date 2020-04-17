@@ -1,0 +1,61 @@
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px;
+  margin: auto 10.625rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-right: 3rem;
+  color: white;
+}
+
+nav a:hover {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 0.15rem solid white;
+}
+
+nav form {
+  display: inline;
+  margin-left: auto;
+}
+
+nav form input {
+  font-family: "Montserrat";
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+nav form button {
+  cursor: pointer;
+  padding: 0.5rem 0.8rem;
+  margin-left: 0.4rem;
+  font-size: 1rem;
+  border: 0.15rem solid white;
+  border-radius: 10px;
+  font-family: "Montserrat";
+  background-color: black;
+  color: white;
+}
+
+nav form button:hover {
+  color: black;
+  background-color: white;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+nav #btn:hover {
+  border-bottom: none;
+}
+/*# sourceMappingURL=SearchBox.css.map */
