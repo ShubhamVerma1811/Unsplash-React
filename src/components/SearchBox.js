@@ -22,8 +22,6 @@ function SearchBox() {
             <button type="submit">Search</button>
           </Link>
         </form>
-        <Link to="#">Log In</Link>
-        <Link to="#">Sign Up</Link>
       </nav>
     </div>
   );

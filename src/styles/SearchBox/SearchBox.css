@@ -9,7 +9,6 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   padding: 40px;
-  margin: auto 10.625rem;
 }
 
 nav a {
@@ -57,5 +56,21 @@ nav form button:hover {
 
 nav #btn:hover {
   border-bottom: none;
+}
+
+@media (max-width: 552px) {
+  nav {
+    padding: 20px 10px !important;
+  }
+  input {
+    width: 100px !important;
+    height: -webkit-max-content !important;
+    height: -moz-max-content !important;
+    height: max-content !important;
+    font-size: 10px !important;
+  }
+  button {
+    padding: 5px !important;
+  }
 }
 /*# sourceMappingURL=SearchBox.css.map */
