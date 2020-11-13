@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/SearchBox/SearchBox.css";
 
 function SearchBox() {
+  const [imageSearchQuery, setImageSearchQuery] = useState("");
+
   function searchPhoto(e) {
     e.preventDefault();
-    localStorage.setItem("query", e.target.value);
+    setImageSearchQuery(e.target.value);
   }
 
   return (
@@ -18,7 +20,7 @@ function SearchBox() {
             onChange={searchPhoto}
             placeholder="Search Images"
           />
-          <Link to={`/images/`} id="btn">
+          <Link to={`/images/${imageSearchQuery}`} id="btn">
             <button type="submit">Search</button>
           </Link>
         </form>
