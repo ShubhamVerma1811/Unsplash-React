@@ -4,29 +4,56 @@ import { h as header } from "../services/tokens";
 
 function SearchResults() {
   let { query } = useParams();
+  const page = React.useRef(1);
+  const dataLoading = React.useRef(false);
 
   const [data, setData] = useState([]);
 
   const uri = `https://api.unsplash.com/search/photos?page=1&per_page=15&query=${query}`;
 
-  const req = new Request(uri, {
-    method: "GET",
-    headers: header,
-    mode: "cors",
-  });
+  async function loadData() {
+    const req = new Request(uri, {
+      method: "GET",
+      headers: header,
+      mode: "cors",
+    });
+
+    const res = await fetch(req);
+    const data = await res.json();
+    if (page.current === 1) {
+      setData(data.results);
+    } else {
+      setData((prev) => [...prev, ...data.results]);
+    }
+  }
 
   useEffect(() => {
     try {
-      (async function () {
-        const res = await fetch(req);
-        const data = await res.json();
-        setData(data.results);
-      })();
+      loadData();
+
+      const listener = (e) => {
+        if (
+          document.documentElement.scrollTop >
+            document.documentElement.scrollHeight / 2 &&
+          !dataLoading.current
+        ) {
+          console.log("scrolled");
+          page.current += 1;
+          loadData();
+        }
+      };
+      window.addEventListener("scroll", listener);
+
+      console.log("once");
+
+      return () => {
+        window.removeEventListener("scroll", listener);
+      };
     } catch (error) {
       console.log(error);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [uri]);
+  }, []);
 
   return (
     <div>
