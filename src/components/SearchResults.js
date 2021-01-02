@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { h as header } from "../services/tokens";
 
+let timeout;
+
 function SearchResults() {
   let { query } = useParams();
   const page = React.useRef(1);
   const dataLoading = React.useRef(false);
-  const [colCount, setColCount] = useState(3);
+  const [colCount, setColCount] = useState(getColCount);
 
   const [data, setData] = useState([]);
 
@@ -24,25 +26,31 @@ function SearchResults() {
     return arr;
   };
 
+  function getColCount() {
+    if (window.innerWidth < 768 && window.innerWidth > 480) {
+      return 2;
+    }
+    if (window.innerWidth < 480) {
+      return 1;
+    }
+    if (window.innerWidth > 768) {
+      return 3;
+    }
+  }
+
   useEffect(() => {
     window.addEventListener("resize", (e) => {
-      if (window.innerWidth < 768 && window.innerWidth > 480) {
-        setColCount(2);
-      }
-      if (window.innerWidth < 480) {
-        setColCount(1);
-      }
-      if (window.innerWidth > 768) {
-        setColCount(3);
-      }
+      setColCount(getColCount());
     });
 
     return window.removeEventListener("resize", (e) => {
-      console.log("removed");
+      setColCount(getColCount());
     });
   }, []);
 
   async function loadData() {
+    dataLoading.current = true;
+
     const uri = `https://api.unsplash.com/search/photos?page=${page.current}&per_page=12&query=${query}`;
 
     const req = new Request(uri, {
@@ -58,6 +66,7 @@ function SearchResults() {
     } else {
       setData((prev) => [...prev, ...data.results]);
     }
+    dataLoading.current = false;
   }
 
   useEffect(() => {
@@ -67,19 +76,28 @@ function SearchResults() {
 
       const listener = (e) => {
         if (
-          document.documentElement.scrollTop >
-            document.documentElement.scrollHeight / 3 &&
+          document.documentElement.scrollTop + window.innerHeight >=
+            document.documentElement.scrollHeight - window.innerHeight / 2 &&
           !dataLoading.current
         ) {
-          console.log("scrolled");
-          page.current += 1;
-          loadData();
+          console.log(page.current);
+          console.log("called loadData");
+
+          if (timeout) {
+            clearTimeout(timeout);
+            timeout = null;
+          }
+
+          timeout = setTimeout(() => {
+            page.current += 1;
+            loadData();
+            console.log(dataLoading.current);
+            console.log("calling uri", page.current);
+          }, 100);
         }
       };
       window.addEventListener("scroll", listener);
-
       console.log("once");
-
       return () => {
         window.removeEventListener("scroll", listener);
       };
@@ -97,10 +115,11 @@ function SearchResults() {
       <div>
         <h1>Home</h1>
         <div className="imgContainer">
-          {colWithImages.map((column) => (
-            <div>
+          {colWithImages.map((column, index) => (
+            <div key={index}>
               {column.map((imgs) => (
                 <div
+                  key={imgs.id}
                   style={{
                     paddingBottom: "20px",
                   }}
