@@ -1,9 +1,6 @@
 const h = new Headers();
 
-h.append(
-  "Authorization",
-  "Client-ID E5EHMkfEkragu1136UCpc_fGGenGwqZltRj6vgw9Hyk"
-);
+h.append("Authorization", `Client-ID ${process.env.REACT_APP_CLIENT_ID}`);
 
 const baseURL = "https://api.unsplash.com";
 
