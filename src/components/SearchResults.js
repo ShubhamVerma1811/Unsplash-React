@@ -113,7 +113,6 @@ function SearchResults() {
     <div>
       <h1>{query.toUpperCase()}</h1>
       <div>
-        <h1>Home</h1>
         <div className="imgContainer">
           {colWithImages.map((column, index) => (
             <div key={index}>
